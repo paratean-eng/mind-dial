@@ -52,6 +52,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Chat-specific colors
+				'chat-background': 'hsl(var(--chat-background))',
+				'chat-container': 'hsl(var(--chat-container))',
+				'user-message': 'hsl(var(--user-message))',
+				'user-message-foreground': 'hsl(var(--user-message-foreground))',
+				'bot-message': 'hsl(var(--bot-message))',
+				'bot-message-foreground': 'hsl(var(--bot-message-foreground))',
+				'message-border': 'hsl(var(--message-border))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +92,35 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'typing': {
+					'0%': { width: '0' },
+					'100%': { width: '100%' }
+				},
+				'pulse-dot': {
+					'0%, 80%, 100%': { opacity: '0.3' },
+					'40%': { opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-up': 'slide-up 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'typing': 'typing 3s steps(40, end)',
+				'pulse-dot': 'pulse-dot 1.5s infinite'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-chat': 'var(--gradient-chat)'
 			}
 		}
 	},
