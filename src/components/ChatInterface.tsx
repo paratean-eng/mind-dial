@@ -73,7 +73,7 @@ export const ChatInterface: React.FC = () => {
         response: data.response,
         status: data.status,
         step: data.step,
-        logs: data.logs,
+        logs: Array.isArray(data.logs) ? data.logs[0] : data.logs,
       };
 
       setMessages(prev => [...prev, botMessage]);
